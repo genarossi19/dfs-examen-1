@@ -9,6 +9,8 @@ function App() {
     golesVisitante: 0,
     amarillaLocal: 0,
     amarillaVisitante: 0,
+    rojaLocal: 0,
+    rojaVisitante: 0,
   });
 
   const onGol = (equipo) => {
@@ -26,10 +28,19 @@ function App() {
         });
   };
 
+  const onRoja = (equipo) => {
+    equipo === "local"
+      ? setPartido({ ...partido, rojaLocal: partido.rojaLocal + 1 })
+      : setPartido({
+          ...partido,
+          rojaVisitante: partido.rojaVisitante + 1,
+        });
+  };
+
   return (
     <div className="container">
       <h1>Partido</h1>
-      <Controles onGol={onGol} onAmarilla={onAmarilla} />
+      <Controles onGol={onGol} onAmarilla={onAmarilla} onRoja={onRoja} />
       <Display partido={partido} />
     </div>
   );

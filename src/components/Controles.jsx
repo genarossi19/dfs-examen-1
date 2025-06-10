@@ -1,4 +1,4 @@
-const Controles = ({ onGol, onAmarilla }) => {
+const Controles = ({ onGol, onAmarilla, onRoja }) => {
   return (
     <div className="controles">
       <div>
@@ -18,7 +18,7 @@ const Controles = ({ onGol, onAmarilla }) => {
         >
           🟨 Amarilla
         </button>
-        <button>🟥 Roja</button>
+        <button onClick={() => onRoja("local")}>🟥 Roja</button>
       </div>
       <div>
         {/* LOGICA DEL VISITANTE  */}
@@ -37,7 +37,7 @@ const Controles = ({ onGol, onAmarilla }) => {
         >
           🟨 Amarilla
         </button>
-        <button>🟥 Roja</button>
+        <button onClick={() => onRoja("visitante")}>🟥 Roja</button>
       </div>
     </div>
   );
