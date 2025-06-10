@@ -7,6 +7,8 @@ function App() {
   const [partido, setPartido] = useState({
     golesLocal: 0,
     golesVisitante: 0,
+    amarillaLocal: 0,
+    amarillaVisitante: 0,
   });
 
   const onGol = (equipo) => {
@@ -15,10 +17,19 @@ function App() {
       : setPartido({ ...partido, golesVisitante: partido.golesVisitante + 1 });
   };
 
+  const onAmarilla = (equipo) => {
+    equipo === "local"
+      ? setPartido({ ...partido, amarillaLocal: partido.amarillaLocal + 1 })
+      : setPartido({
+          ...partido,
+          amarillaVisitante: partido.amarillaVisitante + 1,
+        });
+  };
+
   return (
     <div className="container">
       <h1>Partido</h1>
-      <Controles onGol={onGol} />
+      <Controles onGol={onGol} onAmarilla={onAmarilla} />
       <Display partido={partido} />
     </div>
   );

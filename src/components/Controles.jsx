@@ -1,20 +1,46 @@
-const Controles = ({ onGol }) => {
+const Controles = ({ onGol, onAmarilla }) => {
   return (
     <div className="controles">
       <div>
+        {/* LOGICA DEL LOCAL */}
         <h3>Local</h3>
-        <button onClick={() => { onGol('local') }}>⚽ Gol</button>
-        <button>🟨 Amarilla</button>
+        <button
+          onClick={() => {
+            onGol("local");
+          }}
+        >
+          ⚽ Gol
+        </button>
+        <button
+          onClick={() => {
+            onAmarilla("local");
+          }}
+        >
+          🟨 Amarilla
+        </button>
         <button>🟥 Roja</button>
       </div>
       <div>
+        {/* LOGICA DEL VISITANTE  */}
         <h3>Visitante</h3>
-        <button onClick={() => { onGol('visitante') }}>⚽ Gol</button>
-        <button>🟨 Amarilla</button>
-        <button>🟥 Roja</button>        
+        <button
+          onClick={() => {
+            onGol("visitante");
+          }}
+        >
+          ⚽ Gol
+        </button>
+        <button
+          onClick={() => {
+            onAmarilla("visitante");
+          }}
+        >
+          🟨 Amarilla
+        </button>
+        <button>🟥 Roja</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Controles
+export default Controles;

@@ -1,6 +1,6 @@
 const Display = ({ partido }) => {
   return (
-    <div className="display">    
+    <div className="display">
       <table>
         <thead>
           <tr>
@@ -17,8 +17,8 @@ const Display = ({ partido }) => {
           </tr>
           <tr>
             <th scope="row">🟨</th>
-            <td>0</td>
-            <td>0</td>
+            <td>{partido.amarillaLocal}</td>
+            <td>{partido.amarillaVisitante}</td>
           </tr>
           <tr>
             <th scope="row">🟥</th>
@@ -28,7 +28,7 @@ const Display = ({ partido }) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default Display
+export default Display;
